@@ -189,3 +189,14 @@ footer .footer-down .footer-links a:first-child{
   width:120px;
   margin: 0 1rem;
 }
+
+#marcas-content {
+  display: grid;
+  grid-template-columns: repeat(6,1fr) ;
+  grid-template-rows: repeat(3,1fr) ;
+  margin:3rem 10% 5rem;
+}
+#marcas-content img{
+  width: 85%;
+  margin-bottom:3rem;
+}

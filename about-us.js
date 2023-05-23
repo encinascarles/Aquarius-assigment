@@ -25,7 +25,26 @@ function changeToMarca() {
   const listItem = document.querySelector(".about-us .content");
   const newItem = document.createElement("div");
   newItem.classList.add("content");
-  newItem.innerHTML = "<p>PAGE 2 (CONTENT)</p>";
+  newItem.innerHTML = `<div id="marcas-content">
+  <img src="resources/images/coca-cola-gris.png">
+  <img src="resources/images/fanta-gris.png">
+  <img src="resources/images/sprite-gris.png">
+  <img src="resources/images/aquarius-gris.png">
+  <img src="resources/images/honest-gris.png">
+  <img src="resources/images/powerade-gris.png">
+  <img src="resources/images/royal-bliss-gris.png">
+  <img src="resources/images/nordic-gris.png">
+  <img src="resources/images/appletiser-gris.png">
+  <img src="resources/images/nestea-gris.png">
+  <img src="resources/images/minute-maid-gris.png">
+  <img src="resources/images/aquabona-gris.png">
+  <img src="resources/images/vilas-del-turbon-gris.png">
+  <img src="resources/images/smartwater-gris.png">
+  <img src="resources/images/krystal-gris.png">
+  <img src="resources/images/mare-rosso-gris-v2.png">
+  <img src="resources/images/schuss-gris.png">
+  <img src="resources/images/fuze-tea-gris.png">
+</div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
 
   document.getElementById("siguenos").style.borderBottom = "none";
