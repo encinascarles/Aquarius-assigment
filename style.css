@@ -200,3 +200,24 @@ footer .footer-down .footer-links a:first-child{
   width: 85%;
   margin-bottom:3rem;
 }
+
+#conoce-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1rem 10%;
+  margin: 1rem 0;
+  background-image: url("resources/images/country-navigator-map-gray.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+#conoce-content h2{
+  font-weight:bolder ;
+  font-size: 1em;
+}
+#conoce-content p{
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
