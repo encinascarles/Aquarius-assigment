@@ -9,6 +9,7 @@ function changeToSiguenos(){
     newItem.classList.add('content');
     newItem.innerHTML = '<p>PAGE 1 (CONTENT)</p>';
     listItem.parentNode.replaceChild(newItem, listItem);
+    
 }
 function changeToMarca(){
     const listItem = document.querySelector(".about-us .content");

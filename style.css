@@ -132,7 +132,8 @@ main img{
 }
 
 .about-us .selector ul li{
-  margin: 0.3rem 2rem;
+  margin: 0 2rem;
+  border-bottom: 4px solid red;
 }
 
 .about-us .selector ul li a{
