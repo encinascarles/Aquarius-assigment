@@ -133,7 +133,11 @@ main img{
 
 .about-us .selector ul li{
   margin: 0 2rem;
+}
+
+#siguenos{
   border-bottom: 4px solid red;
+  font-weight: bold;
 }
 
 .about-us .selector ul li a{
