@@ -139,6 +139,7 @@ main img{
   font-size: 1.3rem;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 .about-us .content{
