@@ -147,11 +147,6 @@ main img{
   cursor: pointer;
 }
 
-.about-us .content{
-  margin: 5rem 0;
-  text-align: center;
-}
-
 footer{
   background-color: black;
   margin:0;
@@ -183,3 +178,14 @@ footer .footer-down .footer-links a:first-child{
   padding-left: 0;
 }
 
+#siguenos-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+#siguenos-content img{
+  width:120px;
+  margin: 0 1rem;
+}
