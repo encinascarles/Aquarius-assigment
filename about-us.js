@@ -3,6 +3,7 @@ const marca = document.getElementById("marca");
 const conoce = document.getElementById("conoce");
 
 const tabList = [siguenos, marca, conoce];
+
 function select(tab) {
   for (const t of tabList) {
     t.style.borderBottom = "none";
@@ -12,17 +13,22 @@ function select(tab) {
   tab.style.fontWeight = "bold";
 }
 
-const socialNetworks = ["Facebook", "Twitter", "YouTube", "Instagram"];
-
-function changeToSiguenos() {
+const replaceAboutUs = (html) => {
   const listItem = document.querySelector(".about-us .content");
   const newItem = document.createElement("div");
   newItem.classList.add("content");
-  const socialHtml = socialNetworks
-    .map((social) => `<img src="resources/images/${social}_100x100.png">`)
-    .join("");
-  newItem.innerHTML = `<div id="siguenos-content">${socialHtml}</div>`;
+  newItem.innerHTML = html;
   listItem.parentNode.replaceChild(newItem, listItem);
+};
+
+const socialNetworks = ["Facebook", "Twitter", "YouTube", "Instagram"];
+
+function changeToSiguenos() {
+  replaceAboutUs(
+    `<div id="siguenos-content">${socialNetworks
+      .map((social) => `<img src="resources/images/${social}_100x100.png">`)
+      .join("")}</div>`
+  );
   select(siguenos);
 }
 
@@ -48,14 +54,11 @@ const images = [
 ];
 
 function changeToMarca() {
-  const listItem = document.querySelector(".about-us .content");
-  const newItem = document.createElement("div");
-  newItem.classList.add("content");
-  const imageListHtml = images
-    .map((img) => `<img src="resources/images/${img}">`)
-    .join("");
-  newItem.innerHTML = `<div id="marcas-content">${imageListHtml}</div>`;
-  listItem.parentNode.replaceChild(newItem, listItem);
+  replaceAboutUs(
+    `<div id="marcas-content">${images
+      .map((img) => `<img src="resources/images/${img}">`)
+      .join("")}</div>`
+  );
   select(marca);
 }
 
@@ -145,19 +148,16 @@ const world = {
 };
 
 function changeToConoce() {
-  const listItem = document.querySelector(".about-us .content");
-  const newItem = document.createElement("div");
-  newItem.classList.add("content");
-  const worldHtml = Object.entries(world)
-    .map(
-      ([continent, countries]) =>
-        `<div><h2>${continent}</h2><p>${countries
-          .map((country) => `${country}<br />`)
-          .join("")}</p></div>`
-    )
-    .join("");
-  newItem.innerHTML = `<div id="conoce-content">${worldHtml}</div>`;
-  listItem.parentNode.replaceChild(newItem, listItem);
+  replaceAboutUs(
+    `<div id="conoce-content">${Object.entries(world)
+      .map(
+        ([continent, countries]) =>
+          `<div><h2>${continent}</h2><p>${countries
+            .map((country) => `${country}<br />`)
+            .join("")}</p></div>`
+      )
+      .join("")}</div>`
+  );
   select(conoce);
 }
 
