@@ -4,14 +4,12 @@ const conoce = document.getElementById("conoce");
 
 const tabList = [siguenos, marca, conoce];
 
-function select(tab) {
-  for (const t of tabList) {
-    t.style.borderBottom = "none";
-    t.style.fontWeight = "normal";
-  }
-  tab.style.borderBottom = "4px solid red";
-  tab.style.fontWeight = "bold";
-}
+const styleTab = (t, active) => {
+  t.style.borderBottom = active ? "4px solid red" : "none";
+  t.style.fontWeight = active ? "bold" : "normal";
+};
+
+const select = (tab) => tabList.forEach((t) => styleTab(t, t === tab));
 
 const replaceAboutUs = (html) => {
   const listItem = document.querySelector(".about-us .content");
