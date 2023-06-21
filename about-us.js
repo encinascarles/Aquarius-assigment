@@ -22,30 +22,35 @@ function changeToSiguenos() {
   conoce.style.fontWeight = "normal";
 }
 
+const images = [
+  "coca-cola-gris.png",
+  "fanta-gris.png",
+  "sprite-gris.png",
+  "aquarius-gris.png",
+  "honest-gris.png",
+  "powerade-gris.png",
+  "royal-bliss-gris.png",
+  "nordic-gris.png",
+  "appletiser-gris.png",
+  "nestea-gris.png",
+  "minute-maid-gris.png",
+  "aquabona-gris.png",
+  "vilas-del-turbon-gris.png",
+  "smartwater-gris.png",
+  "krystal-gris.png",
+  "mare-rosso-gris-v2.png",
+  "schuss-gris.png",
+  "fuze-tea-gris.png",
+];
+
 function changeToMarca() {
   const listItem = document.querySelector(".about-us .content");
   const newItem = document.createElement("div");
   newItem.classList.add("content");
-  newItem.innerHTML = `<div id="marcas-content">
-  <img src="resources/images/coca-cola-gris.png">
-  <img src="resources/images/fanta-gris.png">
-  <img src="resources/images/sprite-gris.png">
-  <img src="resources/images/aquarius-gris.png">
-  <img src="resources/images/honest-gris.png">
-  <img src="resources/images/powerade-gris.png">
-  <img src="resources/images/royal-bliss-gris.png">
-  <img src="resources/images/nordic-gris.png">
-  <img src="resources/images/appletiser-gris.png">
-  <img src="resources/images/nestea-gris.png">
-  <img src="resources/images/minute-maid-gris.png">
-  <img src="resources/images/aquabona-gris.png">
-  <img src="resources/images/vilas-del-turbon-gris.png">
-  <img src="resources/images/smartwater-gris.png">
-  <img src="resources/images/krystal-gris.png">
-  <img src="resources/images/mare-rosso-gris-v2.png">
-  <img src="resources/images/schuss-gris.png">
-  <img src="resources/images/fuze-tea-gris.png">
-</div>`;
+  const imageListHtml = images
+    .map((img) => `<img src="resources/images/${img}">`)
+    .join("");
+  newItem.innerHTML = `<div id="marcas-content">${imageListHtml}</div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
 
   siguenos.style.borderBottom = "none";
