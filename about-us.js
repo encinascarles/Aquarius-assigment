@@ -2,24 +2,28 @@ const siguenos = document.getElementById("siguenos");
 const marca = document.getElementById("marca");
 const conoce = document.getElementById("conoce");
 
+const tabList = [siguenos, marca, conoce];
+function select(tab) {
+  for (const t of tabList) {
+    t.style.borderBottom = "none";
+    t.style.fontWeight = "normal";
+  }
+  tab.style.borderBottom = "4px solid red";
+  tab.style.fontWeight = "bold";
+}
+
+const socialNetworks = ["Facebook", "Twitter", "YouTube", "Instagram"];
+
 function changeToSiguenos() {
   const listItem = document.querySelector(".about-us .content");
   const newItem = document.createElement("div");
   newItem.classList.add("content");
-  newItem.innerHTML = `<div id="siguenos-content">
-    <img src="resources/images/Facebook_100x100.png">
-    <img src="resources/images/Twitter_100x100.png">
-    <img src="resources/images/YouTube_100x100.png">
-    <img src="resources/images/Instagram_100x100.png">
-  </div>`;
+  const socialHtml = socialNetworks
+    .map((social) => `<img src="resources/images/${social}_100x100.png">`)
+    .join("");
+  newItem.innerHTML = `<div id="siguenos-content">${socialHtml}</div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
-
-  siguenos.style.borderBottom = "4px solid red";
-  marca.style.borderBottom = "none";
-  conoce.style.borderBottom = "none";
-  siguenos.style.fontWeight = "bold";
-  marca.style.fontWeight = "normal";
-  conoce.style.fontWeight = "normal";
+  select(siguenos);
 }
 
 const images = [
@@ -52,13 +56,7 @@ function changeToMarca() {
     .join("");
   newItem.innerHTML = `<div id="marcas-content">${imageListHtml}</div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
-
-  siguenos.style.borderBottom = "none";
-  siguenos.style.fontWeight = "normal";
-  marca.style.borderBottom = "4px solid red";
-  marca.style.fontWeight = "bold";
-  conoce.style.borderBottom = "none";
-  conoce.style.fontWeight = "normal";
+  select(marca);
 }
 
 const world = {
@@ -150,21 +148,17 @@ function changeToConoce() {
   const listItem = document.querySelector(".about-us .content");
   const newItem = document.createElement("div");
   newItem.classList.add("content");
-  const worldHtml = Object.entries(world).map(
-    ([continent, countries]) =>
-      `<div><h2>${continent}</h2><p>${countries
-        .map((country) => `${country}<br />`)
-        .join("")}</p></div>`
-  ).join("");
+  const worldHtml = Object.entries(world)
+    .map(
+      ([continent, countries]) =>
+        `<div><h2>${continent}</h2><p>${countries
+          .map((country) => `${country}<br />`)
+          .join("")}</p></div>`
+    )
+    .join("");
   newItem.innerHTML = `<div id="conoce-content">${worldHtml}</div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
-
-  siguenos.style.borderBottom = "none";
-  marca.style.borderBottom = "none";
-  conoce.style.borderBottom = "4px solid red";
-  siguenos.style.fontWeight = "normal";
-  marca.style.fontWeight = "normal";
-  conoce.style.fontWeight = "bold";
+  select(conoce);
 }
 
 siguenos.addEventListener("click", changeToSiguenos);
