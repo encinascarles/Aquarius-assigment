@@ -1,6 +1,6 @@
-document.getElementById("siguenos").addEventListener("click", changeToSiguenos);
-document.getElementById("marca").addEventListener("click", changeToMarca);
-document.getElementById("conoce").addEventListener("click", changeToConoce);
+const siguenos = document.getElementById("siguenos");
+const marca = document.getElementById("marca");
+const conoce = document.getElementById("conoce");
 
 function changeToSiguenos() {
   const listItem = document.querySelector(".about-us .content");
@@ -14,13 +14,14 @@ function changeToSiguenos() {
   </div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
 
-  document.getElementById("siguenos").style.borderBottom = "4px solid red";
-  document.getElementById("marca").style.borderBottom = "none";
-  document.getElementById("conoce").style.borderBottom = "none";
-  document.getElementById("siguenos").style.fontWeight = "bold";
-  document.getElementById("marca").style.fontWeight = "normal";
-  document.getElementById("conoce").style.fontWeight = "normal";
+  siguenos.style.borderBottom = "4px solid red";
+  marca.style.borderBottom = "none";
+  conoce.style.borderBottom = "none";
+  siguenos.style.fontWeight = "bold";
+  marca.style.fontWeight = "normal";
+  conoce.style.fontWeight = "normal";
 }
+
 function changeToMarca() {
   const listItem = document.querySelector(".about-us .content");
   const newItem = document.createElement("div");
@@ -47,12 +48,12 @@ function changeToMarca() {
 </div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
 
-  document.getElementById("siguenos").style.borderBottom = "none";
-  document.getElementById("marca").style.borderBottom = "4px solid red";
-  document.getElementById("conoce").style.borderBottom = "none";
-  document.getElementById("siguenos").style.fontWeight = "normal";
-  document.getElementById("marca").style.fontWeight = "bold";
-  document.getElementById("conoce").style.fontWeight = "normal";
+  siguenos.style.borderBottom = "none";
+  siguenos.style.fontWeight = "normal";
+  marca.style.borderBottom = "4px solid red";
+  marca.style.fontWeight = "bold";
+  conoce.style.borderBottom = "none";
+  conoce.style.fontWeight = "normal";
 }
 function changeToConoce() {
   const listItem = document.querySelector(".about-us .content");
@@ -183,10 +184,14 @@ function changeToConoce() {
 </div>`;
   listItem.parentNode.replaceChild(newItem, listItem);
 
-  document.getElementById("siguenos").style.borderBottom = "none";
-  document.getElementById("marca").style.borderBottom = "none";
-  document.getElementById("conoce").style.borderBottom = "4px solid red";
-  document.getElementById("siguenos").style.fontWeight = "normal";
-  document.getElementById("marca").style.fontWeight = "normal";
-  document.getElementById("conoce").style.fontWeight = "bold";
+  siguenos.style.borderBottom = "none";
+  marca.style.borderBottom = "none";
+  conoce.style.borderBottom = "4px solid red";
+  siguenos.style.fontWeight = "normal";
+  marca.style.fontWeight = "normal";
+  conoce.style.fontWeight = "bold";
 }
+
+siguenos.addEventListener("click", changeToSiguenos);
+marca.addEventListener("click", changeToMarca);
+conoce.addEventListener("click", changeToConoce);
